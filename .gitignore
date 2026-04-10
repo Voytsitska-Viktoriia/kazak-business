@@ -1,0 +1,9 @@
+cat > .gitignore <<'EOF'
+node_modules/
+target/
+dist/
+.DS_Store
+*.log
+*.so
+*-keypair.json
+EOF

@@ -1,0 +1,37 @@
+{
+    "name": "kazak-business",
+    "version": "1.0.0",
+    "private": true,
+    "license": "MIT",
+    "scripts": {
+        "build": "anchor build",
+        "test": "anchor test",
+        "test:ts": "yarn ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts",
+        "deploy": "anchor deploy",
+        "deploy:devnet": "solana config set --url devnet && anchor deploy",
+        "airdrop": "solana airdrop 2",
+        "logs": "solana logs",
+        "migrate": "ts-node migrations/deploy.ts",
+        "lint": "prettier \"**/*.{js,ts,json,md}\" --check",
+        "lint:fix": "prettier \"**/*.{js,ts,json,md}\" --write"
+    },
+    "dependencies": {
+        "@coral-xyz/anchor": "^0.32.1",
+        "@solana/spl-token": "^0.4.14",
+        "@solana/web3.js": "^1.98.4",
+        "bn.js": "^5.2.3"
+    },
+    "devDependencies": {
+        "@types/bn.js": "^5.2.0",
+        "@types/chai": "^5.2.3",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "^25.5.2",
+        "chai": "^6.2.2",
+        "mocha": "^11.7.5",
+        "prettier": "^3.3.3",
+        "ts-mocha": "^11.1.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^6.0.2"
+    },
+    "packageManager": "yarn@4.13.0+sha512.5c20ba010c99815433e5c8453112165e673f1c7948d8d2b267f4b5e52097538658388ebc9f9580656d9b75c5cc996f990f611f99304a2197d4c56d21eea370e7"
+}

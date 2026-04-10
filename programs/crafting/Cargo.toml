@@ -1,0 +1,28 @@
+[package]
+name = "crafting"
+version = "0.1.0"
+description = "Crafting program for Kozak Business game"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "crafting"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+idl-build = [
+  "anchor-lang/idl-build",
+  "anchor-spl/idl-build",
+  "resource_manager/idl-build",
+  "item_nft/idl-build"
+]
+default = []
+
+[dependencies]
+anchor-lang = { workspace = true }
+anchor-spl = { workspace = true }
+resource_manager = { path = "../resource_manager", features = ["cpi"] }
+item_nft = { path = "../item_nft", features = ["cpi"] }
